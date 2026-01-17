@@ -1,0 +1,197 @@
+/* Reset a základní font*/
+body {
+    font-family: Arial, sans-serif;             /* základní font */
+    background-color: #f9f9f9;                /* světle šedé pozadí */
+    margin: 20px;                               /* okraje stránky */
+}
+
+h1 {                                            
+    text-align: center;                         /* nadpis na střed */
+    color: #333;                              /* tmavě šedá barva textu */
+}
+
+/* Tabulka seznamu pojištěných */
+table {
+    width: 100%;                                  
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #e0f7fa;
+}
+
+/* Tlačítka */
+a, button {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 2px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* Upravit */
+a[href*="upravit"] {
+    background-color: #ff9800;
+    color: white;
+}
+
+a[href*="upravit"]:hover {
+    background-color: #e68a00;
+}
+
+/* Smazat */
+a[href*="smazat"] {
+    background-color: #f44336;
+    color: white;
+}
+
+a[href*="smazat"]:hover {
+    background-color: #d32f2f;
+}
+
+/* Formulář */
+.formular {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.radek {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.sloupec {
+    width: 48%;
+}
+
+.sloupec input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+button.btn-maly {
+    background-color: #4CAF50;
+    color: white;
+    padding: 7px 15px;
+    font-size: 0.9rem;
+}
+
+button.btn-maly:hover {
+    background-color: #45a049;
+}
+
+/* Chyby */
+.chyby {
+    background-color: #ffdddd;
+    border-left: 5px solid #f44336;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.chyby p {
+    margin: 5px 0;
+    color: #b71c1c;
+}
+/* Tlačítka Upravit a Smazat ve stylu buttonů */
+a[href*="upravit"],
+a[href*="smazat"] {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 2px 3px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Upravit */
+a[href*="upravit"] {
+    background-color: #ff9800;
+}
+
+a[href*="upravit"]:hover {
+    background-color: #e68a00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* Smazat */
+a[href*="smazat"] {
+    background-color: #f44336;
+}
+
+a[href*="smazat"]:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+/* Sloupce tabulky */
+table th, table td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle; /* aby tlačítka byla zarovnaná s textem */
+}
+
+/* Tlačítka */
+a.btn-upravit, a.btn-smazat {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    margin-right: 3px;
+    transition: 0.2s;
+}
+
+a.btn-upravit {
+    background-color: #ff9800;
+}
+
+a.btn-upravit:hover {
+    background-color: #e68a00;
+}
+
+a.btn-smazat {
+    background-color: #f44336;
+}
+
+a.btn-smazat:hover {
+    background-color: #d32f2f;
+}
+
+
