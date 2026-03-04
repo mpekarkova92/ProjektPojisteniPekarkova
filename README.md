@@ -59,10 +59,9 @@ Sloupce
 
 ## Autor 
 Markéta Pekárková
-Ve spolupráci s Ch
 Projekt ke kurzu PHP
 2026
 
 ## Licence
-Tento projekt je šířen pod licencí MIT
+
 

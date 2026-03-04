@@ -29,12 +29,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $telefon = trim($_POST['telefon']);
     $datum_narozeni = trim($_POST['datum_narozeni']);
 
-    // validace
-    if ($jmeno === '') $chyby[] = 'Jméno je povinné';
-    if ($prijmeni === '') $chyby[] = 'Příjmení je povinné';
-    if ($telefon === '') $chyby[] = 'Telefon je povinný';
-    if ($datum_narozeni === '') $chyby[] = 'Datum narození je povinné';
+    // validace 
+    if ($jmeno === '') {
+        $chyby[] = 'Jméno je povinné';
+    } elseif (mb_strlen($jmeno) > 50) {
+        $chyby[] = 'Jméno je příliš dlouhé (maximálně 50 znaků).';
+    }
+        
+    if ($prijmeni === '') {
+        $chyby[] = 'Příjmení je povinné';
+    } elseif (mb_strlen($jmeno) > 50) {
+        $chyby[] = 'Příjmení je příliš dlouhé (maximálně 50 znaků).';
+    }
 
+    // Validace telefonu
+    $cisteCislo = str_replace(' ', '', $telefon); // Odstraní mezery 
+
+    if ($telefon === '') {
+        $chyby[] = 'Telefon je povinný';
+    } elseif (!preg_match('/^\+?[0-9]+( [0-9]+)*$/', $telefon)) {
+        $chyby[] = 'Telefonní číslo má špatný formát (plus patří na začátek, nepoužívejte vícenásobné mezery)';
+    } elseif (mb_strlen($cisteCislo) < 9 || mb_strlen($cisteCislo) > 15) {
+        $chyby[] = 'Telefonní číslo musí mít alespoň 9 až 15 čísel (bez mezer).';
+    }
+
+    // Validace data narození
+    if ($datum_narozeni === '') {
+        $chyby[] = 'Datum narození je povinné';
+    } else {
+        // Vytvoříme si dnešní datum ve formátu ROK, MĚSÍC, DEN (stejně jako to posílá formulář)
+        $dnesniDatum = date('Y-m-d');
+        $maxDatum = '1900-01-01'; // Limit rok 1880
+
+        // Datum nesmí být následující
+        if ($datum_narozeni > $dnesniDatum) {
+            $chyby[] = 'Datum narození nesmí být v budoucnosti.';
+        } elseif ($datum_narozeni < $maxDatum) {
+            $chyby[] = 'Zadané datum narození je příliš staré.'; 
+        }
+    }
+        
+    
+    
     // Pokud nejsou chyby uloží se do db
     if (empty($chyby)) {
         if (!empty($_POST['id'])) {

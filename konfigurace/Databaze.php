@@ -1,7 +1,7 @@
 <?php
 /*
     Třída Databaze slouží k vytvoření a připojení k databázi
-    Používá se staticky, nemusá se vytvářet instance třídy
+    Používá se staticky, nemusí se vytvářet instance třídy
 */
 class Databaze {
 

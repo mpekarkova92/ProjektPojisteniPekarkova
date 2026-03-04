@@ -26,10 +26,10 @@
 <!--Řádek formuláře: Jméno a příjmení-->
     <div class="radek">
         <div class="sloupec">
-            <input name="jmeno" placeholder="Jméno" value="<?= htmlspecialchars($upravovanaOsoba->jmeno ?? '') ?>" required>
+            <input name="jmeno" maxlength="50"  placeholder="Jméno" value="<?= htmlspecialchars($upravovanaOsoba->jmeno ?? '') ?>" required>
         </div>
         <div class="sloupec">
-            <input name="prijmeni" placeholder="Příjmení" value="<?= htmlspecialchars($upravovanaOsoba->prijmeni ?? '') ?>" required>
+            <input name="prijmeni" maxlength="50" placeholder="Příjmení" value="<?= htmlspecialchars($upravovanaOsoba->prijmeni ?? '') ?>" required>
         </div>
     </div>
 
@@ -40,7 +40,7 @@
                    value="<?= htmlspecialchars($upravovanaOsoba->datum_narozeni ?? '') ?>" required>
         </div>
         <div class="sloupec">
-            <input name="telefon" placeholder="Telefon" value="<?= htmlspecialchars($upravovanaOsoba->telefon ?? '') ?>" required>
+            <input name="telefon" placeholder="Telefon" value="<?= htmlspecialchars($upravovanaOsoba->telefon ?? '') ?>" pattern="\+?[0-9]+( [9,15]+)*" title="Zadejte platné číslo. Plus patří jen na začátek a nepoužívejte vícenásobné mezery." required>
         </div>
     </div>
 
