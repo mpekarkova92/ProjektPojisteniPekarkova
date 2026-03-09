@@ -46,7 +46,7 @@ Tabulka: pojisteni
 Sloupce 
 - id
 - jmeno
-- prijemni
+- prijmeni
 - predvolba
 - telefon
 -datum_narozeni
