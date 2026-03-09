@@ -47,6 +47,7 @@ Sloupce
 - id
 - jmeno
 - prijemni
+- predvolba
 - telefon
 -datum_narozeni
 
