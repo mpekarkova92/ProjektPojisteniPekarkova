@@ -49,7 +49,7 @@ Sloupce
 - prijmeni
 - predvolba
 - telefon
--datum_narozeni
+- datum_narozeni
 
 ## Spuštění projektu 
 1. Projekt je určen ke spuštění na lokálním serveru (např. XAMPP).
