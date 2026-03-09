@@ -3,7 +3,7 @@
     <tr>
         <th>Jméno</th>
         <th>Příjmení</th>
-        <th>Telefon</th>
+        <th>Předvolba</th>    <th>Telefon</th>
         <th>Datum narození</th>
         <th>Věk</th>
         <th>Akce</th>
@@ -22,6 +22,9 @@
 
         <!--Výpis příjmení-->
         <td><?= htmlspecialchars($osoba->prijmeni) ?></td>
+
+        <!--Předvolba-->
+        <td><?= htmlspecialchars($osoba->predvolba) ?> </td>
 
         <!--Výpis telefonu-->
         <td><?= htmlspecialchars($osoba->telefon) ?></td>

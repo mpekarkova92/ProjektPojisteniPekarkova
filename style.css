@@ -100,12 +100,22 @@ a[href*="smazat"]:hover {
 }
 
 /* Popisky formuláře */
-.sloupec input {
+.sloupec, input {
     width: 100%;              /* Šířka vstupního pole */
     padding: 8px 10px;         /* Vnitřní odsazení */
     border-radius: 4px;        /* Zaoblené rohy */
     border: 1px solid #ccc;      /* Světle šedý okraj */
     font-size: 0.95rem;         /* Velikost písma */
+    box-sizing: border-box;
+}
+
+/* Popisek předvolby */
+.sloupec, select {
+    width: 100%;              /* Šířka vstupního pole */
+    padding: 8px 10px;         /* Vnitřní odsazení */
+    border-radius: 4px;        /* Zaoblené rohy */
+    border: 1px solid #ccc;      /* Světle šedý okraj */
+    font-size: 0.95rem;         /* Velikost písma */ 
 }
 
 /* Tlačítko Přidat */

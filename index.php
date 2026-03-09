@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Získání a ořezání dat z formuláře
     $jmeno = trim($_POST['jmeno']);
     $prijmeni = trim($_POST['prijmeni']);
+    $predvolba = trim($_POST['predvolba']);
     $telefon = trim($_POST['telefon']);
     $datum_narozeni = trim($_POST['datum_narozeni']);
 
@@ -75,10 +76,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($chyby)) {
         if (!empty($_POST['id'])) {
             // Úprava pojištěného
-            $kontroler->upravit((int)$_POST['id'], $jmeno, $prijmeni, $telefon, $datum_narozeni);
+            $kontroler->upravit((int)$_POST['id'], $jmeno, $prijmeni, $predvolba, $telefon, $datum_narozeni);
         } else {
             // Přidání pojiištěného
-            $kontroler->pridat($jmeno, $prijmeni, $telefon, $datum_narozeni );
+            $kontroler->pridat($jmeno, $prijmeni, $predvolba, $telefon, $datum_narozeni );
         }
         // Přesměrování zpět na hlavní stránku
         header("Location: index.php");

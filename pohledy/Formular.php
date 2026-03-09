@@ -33,14 +33,23 @@
         </div>
     </div>
 
-<!--Řádek formuláře: datum narození a telefon-->
+<!--Řádek formuláře: datum narození, předvolbu a telefon-->
     <div class="radek">
         <div class="sloupec">
             <input type="date" name="datum_narozeni" placeholder="Datum narození" id="datum_narozeni"
                    value="<?= htmlspecialchars($upravovanaOsoba->datum_narozeni ?? '') ?>" required>
         </div>
+        <!--Předvolba-->
         <div class="sloupec">
-            <input name="telefon" placeholder="Telefon" value="<?= htmlspecialchars($upravovanaOsoba->telefon ?? '') ?>" pattern="\+?[0-9]+( [9,15]+)*" title="Zadejte platné číslo. Plus patří jen na začátek a nepoužívejte vícenásobné mezery." required>
+            <select name="predvolba" id="predvolba">
+                <option value="+420" <?= ($upravovanaOsoba->predvolba ?? '') === '+420' ? 'selected' : '' ?>>+420</option>
+                <option value="+421" <?= ($upravovanaOsoba->predvolba ?? '') === '+421' ? 'selected' : '' ?>>+421</option>
+            </select>
+        </div>
+        <!--Telefon-->
+        <div class="sloupec">
+            <input name="telefon" placeholder="Telefon" value="<?= htmlspecialchars($upravovanaOsoba->telefon ?? '') ?>" 
+            pattern="[0-9]{9}" required>
         </div>
     </div>
 
